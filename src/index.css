@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0a0b0e;
+    --bg-surface: #12141a;
+    --bg-card: #181b22;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(163, 230, 53, 0.3);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --accent-lime: #a3e635;
+    --accent-teal: #2dd4bf;
+  }
+
+  .light {
+    --bg-primary: #f8f9fa;
+    --bg-surface: #ffffff;
+    --bg-card: #f1f3f5;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(101, 163, 13, 0.4);
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-muted: #9ca3af;
+    --accent-lime: #65a30d;
+    --accent-teal: #0d9488;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #272a33;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3f4452;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Glow subtle utilities */
+.lime-glow {
+  box-shadow: 0 0 25px -5px rgba(163, 230, 53, 0.15);
+}
+
+.lime-glow-strong {
+  box-shadow: 0 0 35px -5px rgba(163, 230, 53, 0.3);
+}
+
+.subtle-border {
+  border: 1px solid var(--border-subtle);
+}
+
+/* Glass effect */
+.glass-panel {
+  background: rgba(18, 20, 26, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
